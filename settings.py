@@ -16,10 +16,69 @@ def main(argv):
     resy = {'small': 480, 'medium':768, 'large':1024, 'xtra-large':1200, 'full':1944}
     sat = {'color': 0, 'bw': -100, 'fx01': -50, 'vibrant': 100}
 
+    sharpness = 0
+    contrast = 0
+    brightness = 50
+    saturation = 0
+    # ISO = 0
+    ISO = 800
+    video_stabilization = False
+    exposure_compensation = 0
+
+    # exposure_mode = 'auto'
+    # exposure_mode = 'off'
+    # exposure_mode = 'night'
+    # exposure_mode = 'nightpreview'
+    # exposure_mode = 'backlight'
+    # exposure_mode = 'spotlight'
+    exposure_mode = 'sports'
+    # exposure_mode = 'snow'
+    # exposure_mode = 'beach'
+    # exposure_mode = 'verylong'
+    # exposure_mode = 'fixedfps'
+    # exposure_mode = 'antishake'
+    # exposure_mode = 'fireworks'
+
+    image_effect = 'none'
+    # image_effect = 'negative'
+    # image_effect = 'solarize'
+    # image_effect = 'sketch'
+    # image_effect = 'denoise'
+    # image_effect = 'emboss'
+    # image_effect = 'oilpaint'
+    # image_effect = 'hatch'
+    # image_effect = 'gpen'
+    # image_effect = 'pastel'
+    # image_effect = 'watercolor'
+    # image_effect = 'film'
+    # image_effect = 'blur'
+    # image_effect = 'saturation'
+    # image_effect = 'colorswap'
+    # image_effect = 'washedout'
+    # image_effect = 'posterise'
+    # image_effect = 'colorpoint'
+    # image_effect = 'colorbalance'
+    # image_effect = 'cartoon'
+    # image_effect = 'deinterlace1'
+    # image_effect = 'deinterlace2'   
+    
+    meter_mode = 'average'
+    awb_mode = 'auto'
+    image_effect = 'none'
+    color_effects = None
+    rotation = 0
+    hflip = False
+    vflip = False
+    crop = (0.0, 0.0, 1.0, 1.0)
+
     settings = {'filetype' : 'jpg',
                 'width' : resx['small'],
                 'height' : resy['small'],
-                'style' : sat['color'] }
+                'style' : sat['color'],
+                'ISO' : ISO,
+                'ev' : exposure_compensation,
+                'mode': exposure_mode,
+                'effect' : image_effect }
 
     f = open(filename, 'w')
     pickle.dump(settings, f)

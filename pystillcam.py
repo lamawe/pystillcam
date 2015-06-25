@@ -22,12 +22,16 @@ def main(argv):
    cam = picamera.PiCamera()
    cam.resolution = (r['width'], r['height'])
    cam.saturation = r['style']
+   cam.ISO = r['ISO']
+   cam.exposeure_mode = r['mode']
+   cam.exposure_compensation = r['ev']
+   cam.image_effect = r['effect']
    #cam.led = False
 
    print('Starting.') 
    for filename in cam.capture_continuous('pic/img{counter:03d}.jpg'):
-        print('Captured %s' % filename)
-        time.sleep(15) 
+       print('Captured %s' % filename)
+       time.sleep(15) 
    
    
     
