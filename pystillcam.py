@@ -1,4 +1,4 @@
-#
+#!/usr/bin/env python
 # Python Still Camera
 #
 # control program
