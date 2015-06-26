@@ -63,13 +63,32 @@ def main(argv):
     # image_effect = 'deinterlace2'   
     
     meter_mode = 'average'
+    # meter_mode = 'spot'
+    # meter_mode = 'backlit'
+    # meter_mode = 'matrix'
+
+    #awb_mode = 'off'
     awb_mode = 'auto'
-    image_effect = 'none'
+    # awb_mode = 'sunlight'
+    # awb_mode = 'cloudy'
+    # awb_mode = 'shade'
+    # awb_mode = 'tungsten'
+    # awb_mode = 'fluorescent'
+    # awb_mode = 'incandescent'
+    # awb_mode = 'flash'
+    # awb_mode = 'horizon'
+    
+  
     color_effects = None
+
     rotation = 0
     hflip = False
     vflip = False
     crop = (0.0, 0.0, 1.0, 1.0)
+
+    rights = 'Copyright (c) 2015 Wes LaMarche'
+    comment = 'PI NoIR Camara'
+
 
     settings = {'filetype' : 'jpg',
                 'width' : resx['small'],
@@ -78,7 +97,9 @@ def main(argv):
                 'ISO' : ISO,
                 'ev' : exposure_compensation,
                 'mode': exposure_mode,
-                'effect' : image_effect }
+                'effect' : image_effect,
+                'rights' : rights,
+                'comment' : comment }
 
     f = open(filename, 'w')
     pickle.dump(settings, f)

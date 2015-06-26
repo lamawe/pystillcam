@@ -26,11 +26,16 @@ def main(argv):
    cam.exposeure_mode = r['mode']
    cam.exposure_compensation = r['ev']
    cam.image_effect = r['effect']
+   cam.exif_tags['IFD0.Copyright'] = r['rights']
+   cam.exif_tags['EXIF.UserComment'] = r['comment']
    #cam.led = False
 
    print('Starting.') 
-   for filename in cam.capture_continuous('pic/img{counter:03d}.jpg'):
+   for filename in cam.capture_continuous('pic/img{timestamp:%Y%m%d}{counter:03d}.jpg', format='jpeg'):
        print('Captured %s' % filename)
+       print('Sutter speed: %s' % cam.exposure_speed)
+       print cam.framerate
+       print cam.exif_tags
        time.sleep(15) 
    
    
