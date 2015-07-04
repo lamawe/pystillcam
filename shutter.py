@@ -5,14 +5,14 @@ import sys
 import time
 import RPi.GPIO as GPIO
 
-# Set Callback
-def shutter(channel):
+# Action when shutter is pressed
+def shutter_pressed(channel):
     print "Shutter Pressed! "  + str(channel)
 
 # Before Main Setup GPIO
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP) 
-GPIO.add_event_detect(17, GPIO.FALLING, callback=shutter, bouncetime=300) 
+GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.add_event_detect(17, GPIO.FALLING, callback=shutter_pressed, bouncetime=300) 
 
 
 def main(argv):
